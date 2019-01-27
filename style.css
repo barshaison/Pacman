@@ -1,0 +1,213 @@
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: black;
+    opacity: 0.9;
+}
+
+#canvas{
+    display: block;
+    margin: 0 auto;
+}
+
+.header{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #000000;
+    position: relative;
+}
+.gameInfo{
+    font-size:20px;
+    color: #fefefe;
+
+    border-color: black;
+}
+.gameInput{
+    background-color: #fefefe;
+    border-color: black;
+    border: solid;
+    -moz-text-decoration-color: red;
+}
+.footer{
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #000000;
+    position: relative;
+}
+#details{
+    position: relative;
+    left: 5%;
+    display: inline-block;
+}
+#canvas{
+    position: relative;
+    left: 12%;
+    display: inline-block;
+    border:3px solid #000000;
+    background-color: darkslategrey;
+}
+#newGame{
+    position: relative;
+    left: 16.5%;
+    display: inline-block;
+
+}
+#newGameButton{
+    background-color: orange;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+#footerContent{
+    padding-left:2em
+}
+.logo{
+    position: relative;
+    left: 5%;
+}
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+
+
+
+}
+.site{
+    width: 1200px;
+    height: 420px;
+    position: relative;
+    left: 5%;
+}
+
+/*about modal style*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: black;
+
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    -webkit-text-fill-color: white;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.tabOpt{
+    -webkit-text-fill-color: white;
+    font-weight: bold;
+}
+.aboutIfo{
+    font-weight: bold;
+}
+.tabStyle{
+    width: 1000px;
+    height:350px ;
+    border: solid;
+    background-color: black;
+    opacity: 0.87;
+}
+.welcomeB{
+    background-color: orange;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+.headLine{
+    -webkit-text-fill-color: white;
+   font-size:35px ;
+}
+.regPar{
+    -webkit-text-fill-color: white;
+}
+#registration{
+    -webkit-text-fill-color: white;
+}
+
+#regSubmit{
+    background-color: orange;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-text-fill-color: black;
+}
+.loginInfo{
+    -webkit-text-fill-color: white;
+}
+.white{
+    -webkit-text-fill-color: white;
+
+}
+.input{
+    -webkit-text-fill-color: black;
+}
+.gameInput{
+    text-emphasis-color: black;
+    font-size:15px ;
+    text-align: center;
+}

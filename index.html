@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PacMan</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-1.10.2.js"></script>-->
+
+</head>
+
+<body id="body" background="Resources/fire.jpg">
+<header class="header">
+<img class ="logo" src="Resources/pacman-logo.png">
+</header>
+<content >
+<div id="content">
+    <div class="tab">
+        <button class="tablinks" id="Welcome_tab" onclick="openTab(event, 'Welcome')" ><p class="tabOpt">Welcome</p></button>
+        <button class="tablinks" id="Register_tab" onclick="openTab(event, 'Register')"><p class="tabOpt">Register</p></button>
+        <button class="tablinks" id="Login_tab" onclick="openTab(event, 'Login')"><p class="tabOpt">Login</p ></button>
+        <button class="tablinks" id="About_tab" onclick="openAboutDialog()"><P class="tabOpt">About</P></button>
+    </div>
+
+
+    <div id="Welcome" class="tabcontent">
+        <div class="site">
+            <div class="tabStyle">
+
+                <h3 class="headLine">Welcome</h3>
+                <br><br><br><br><br><br>
+                <button class="welcomeB" class="tablinks" onclick="openTab(event, 'Login')">Login</button>
+                <button class="welcomeB" class="tablinks" onclick="openTab(event, 'Register')">Register</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="Register" class="tabcontent">
+        <div class="site">
+            <div class="tabStyle">
+                <form id = "registration" action="mailto:barshai@post.bgu.ac.il">
+                   <!-- <h3>Registration</h3>-->
+                    User name:<br>
+                    <input class="input" id = "username" type="text" name="username">
+                    <br>
+                    Password:<br>
+                    <input class="input" id ="password"  type="password" name="password" >
+                    <br>
+                    First name:<br>
+                    <input class="input" id = "firstName" type="text" name="firstName" >
+                    <br>
+                    Last name:<br>
+                    <input class="input" id = "lastName" type="text" name="lastName" >
+                    <br>
+                    Email:<br>
+                    <input class="input" id="email" type="email" name="email" required  placeholder="Enter a valid email address">
+                    <br>
+                    Birthday:<br>
+                    <input class="input" id="birthday" type="date" name="birthday" >
+                    <br><br>
+                    <input id="regSubmit" type="submit" value="Submit" onclick="">
+
+                </form>
+
+            </div>
+            <span id="msg"></span>
+        </div>
+
+    </div>
+
+    <div id="Login" class="tabcontent">
+        <div class="site">
+           <div class="tabStyle">
+               <h3 class="headLine">Login</h3>
+               <label class="loginInfo"><b>Username</b></label>
+               <input type="text" id="usr_name" placeholder="Enter Username" name="uname" required>
+               <br/><br>
+               <label class="loginInfo"><b>Password</b></label>
+               <input type="password" id="pass" placeholder="Enter Password" name="psw" required>
+               <br><br>
+               <button class="welcomeB" onclick="handle_submit()">submit</button>
+           </div>
+        </div>
+
+    </div>
+
+    <div id="About" class="tabcontent">
+        <div class="site">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p class="aboutIfo">This website was created by Daniel Barshai </p>
+                <p class="aboutIfo">I used the Validation and DatePicker JQuery Plugins</p>
+                <p class="aboutIfo">I did not use any Templates</p>
+                <p class="aboutIfo">My main difficulties were that I was new to javascript thus I had to learn a lot from the beginning. Also I found out that the html5 canvas element is not so comfortable because of the fact that there are no inner elements in it. Thus, I had to use coordinates to place each element in a specific place.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="GameDetails" class="tabcontent" >
+        <div class="site">
+           <div class="tabStyle">
+               <h3 class="white">Select Game Time</h3>
+               <select id="timeChoice">
+                   <option value="60">1 Minute</option>
+                   <option value="90">1.5 Minute</option>
+                   <option value="120">2 Minutes</option>
+                   <option value="180">3 Minutes</option>
+                   <option value="1000">Unlimited</option>
+               </select>
+               <h3 class="white">Select Amount Of Food</h3>
+               <select id="foodChoice">
+                   <option value="50">50</option>
+                   <option value="60">60</option>
+                   <option value="70">70</option>
+                   <option value="80">80</option>
+                   <option value="90">90</option>
+               </select>
+               <h3 class="white">Select Amount Of Ghosts</h3>
+               <select id="ghostChoise">
+                   <option value="1">1</option>
+                   <option value="2">2</option>
+                   <option value="3">3</option>
+               </select>
+               <br><br><br>
+               <button class="welcomeB" onclick="gameStartHandler()">Start Game</button>
+           </div>
+        </div>
+    </div>
+
+
+    <div id="Game" class="tabcontent">
+        <div id="details">
+            <br>
+            <br>
+            <br>
+            <p class="gameInfo"><b>Pacman Name:</b></p>
+
+
+
+            <input class="gameInput" id="lblName" type="text" />
+            <br/>
+            <br>
+
+           <p class="gameInfo"> <b>LIVES:</b></p>
+
+            <input class="gameInput" id="lblLives" type="text" />
+            <br/>
+
+
+            <p class="gameInfo"><b>SCORE:</b></p>
+
+            <input class="gameInput" id="lblScore" type="text" />
+            <br/>
+
+            <p class="gameInfo"><b>TIME:</b></p>
+
+            <input class="gameInput" id="lblTime" type="text" />
+            <br/>
+            <br><br><br> <br><br><br><br> <br><br>
+
+        </div>
+
+        <canvas id="canvas" height="600" width="600"></canvas>
+        <img src="Resources/ghostP.png" id="ghost" hidden>
+        <img src="Resources/brik.jpg" id="brik" hidden>
+        <img src="Resources/ghostGarbage.png" id="ghost2" hidden>
+        <img src="Resources/ghostBlue.png" id="ghost3" hidden>
+        <img src="Resources/50.png" id="50Point" hidden>
+        <img src="Resources/hurt.png" id="hurt" hidden>
+        <audio src="Resources/badbadnotgood.mp3" id="song"></audio>
+        <img src="Resources/watch.png" id="watch" hidden>
+
+        <div id="newGame">
+            <button id="newGameButton" onclick="Start()">Start New Game</button>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+</div>
+</content>
+
+<footer class="footer">
+
+    <p><font id="footerContent" color="gold">Created by Daniel Barshai. -- Contact me: barshai@post.bgu.ac.il</font></p>
+</footer>
+
+</body>
+</html>
