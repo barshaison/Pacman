@@ -5,5 +5,6 @@ Pacman game website
 Register or Login with the following credentials:
 
   Username: a
+  
   Password: a
 
